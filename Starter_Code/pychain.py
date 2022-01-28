@@ -52,9 +52,10 @@ import hashlib
 # YOUR CODE HERE
 @dataclass
 class Record:
-    sender: str
-    receiver: str
-    amount: str
+    sender: str = "0"
+    receiver: str = "0"
+    amount: str = "0"
+
 
 ################################################################################
 # Step 2:
@@ -73,7 +74,7 @@ class Block:
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
     record: Record()
-
+    
     creator_id: int
     prev_hash: str = "0"
     timestamp: str = datetime.datetime.utcnow().strftime("%H:%M:%S")
@@ -197,7 +198,7 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        data=input_data,
+        record=Record(sender_input_data, receiver_input_data, amount_input_data),
         creator_id=42,
         prev_hash=prev_block_hash
     )
