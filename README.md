@@ -89,6 +89,22 @@ Test your complete `PyChain` ledger and user interface by running your Streamlit
 
 5. Test the blockchain validation process by using the web interface. Take a screenshot of the Streamlit application page, which should indicate the validity of the blockchain. Include the screenshot in the `README.md` file for your homework repository.
 
+
+### How it works
+There are three user inputs provided that accept the following transaction information:
+* Sender
+* Recipient
+* Transaction Amount
+
+That information is stored in a Dictionary that is stored as a Record of a Blockchain Block, which is stored in a Pandas Dataframe. Each Block contains that information as well as the information of the Time the transaction was minted, id of the person minting the transaction, the hash of the previous transaction (0 for the Genisis Block) and the Nonce. Every time a transaction is completed, the interface shows a new addition to the Blockchain with the option to validate each transaction is legitimate. 
+
+![](Images/validateLedger.png)
+
+There is a drop down on the left that can be used to help verify each block as well as a slider to increase the difficulty of the hash requirements.
+
+![](Images/verifyLedger.png)
+
+
 ---
 ## Submission
 
